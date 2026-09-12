@@ -1,0 +1,6 @@
+# Pinned long ago and never revisited. Some of these do not install on 3.12.
+requests==2.19.1
+urllib3==1.24.1
+pytest==4.6.0
+six==1.11.0
+python-dateutil==2.7.0
