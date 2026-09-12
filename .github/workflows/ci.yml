@@ -18,4 +18,8 @@ jobs:
       - name: Install
         run: python -m pip install --upgrade pip pytest
       - name: Test
-        run: python -m pytest -q
+        # tests/test_flaky.py 被**故意排除**，理由写在 tests/test_sanity.py 的文件头：
+        # 那三个不可靠测试是给上层管道练手用的样本，不是这个仓库的门禁。
+        # 真实项目里它们会被修掉或者隔离；这里留着，但让本仓库的 CI 保持有意义
+        # （绿 = 可用的练习靶子；红 = 这条链路没法验证）。
+        run: python -m pytest -q --ignore=tests/test_flaky.py
